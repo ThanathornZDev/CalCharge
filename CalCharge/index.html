@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณเวลาในการชาร์จรถไฟฟ้า</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>คำนวณเวลาในการชาร์จรถไฟฟ้า</h1>
+        <form id="charge-form">
+            <label for="battery-capacity">ความจุแบตเตอรี่ (kWh):</label>
+            <input type="number" id="battery-capacity" step="0.01" required>
+            
+            <label for="charging-power">กำลังในการชาร์จ (kW):</label>
+            <input type="number" id="charging-power" step="0.01" required>
+            
+            <label for="current-percent">เปอร์เซ็นต์แบตเตอรี่ที่คงเหลือ:</label>
+            <input type="number" id="current-percent" step="0.01" min="0" max="100" required>
+            
+            <label for="target-percent">เปอร์เซ็นต์แบตเตอรี่ที่ต้องการ:</label>
+            <input type="number" id="target-percent" step="0.01" min="0" max="100" required>
+            
+            <button type="button" onclick="calculateChargeTime()">คำนวณ</button>
+        </form>
+        
+        <div id="result">
+            <p id="time-result"></p>
+        </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

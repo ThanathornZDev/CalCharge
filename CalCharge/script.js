@@ -16,14 +16,13 @@ function updateBatteryCapacity() {
 
     if (model && carModels[model]) {
         capacityInput.value = carModels[model];
-        capacityInput.readOnly = true; // ตั้งค่าให้ไม่สามารถแก้ไขได้
+        capacityInput.readOnly = true; 
     } else {
         capacityInput.value = '';
-        capacityInput.readOnly = false; // ให้สามารถกรอกค่าได้เอง
+        capacityInput.readOnly = false; 
     }
 }
 
-// ฟังก์ชันสำหรับคำนวณเวลาในการชาร์จ
 function calculateChargeTime() {
     const batteryCapacity = parseFloat(document.getElementById('battery-capacity').value);
     const chargingPower = parseFloat(document.getElementById('charging-power').value);
@@ -43,7 +42,6 @@ function calculateChargeTime() {
 
     const chargeTimeInHours = requiredCapacity / chargingPower;
 
-    // คำนวณชั่วโมงและนาที
     const hours = Math.floor(chargeTimeInHours);
     const minutes = Math.round((chargeTimeInHours - hours) * 60);
 
@@ -51,9 +49,3 @@ function calculateChargeTime() {
     resultElement.textContent = `เวลาในการชาร์จจาก ${currentPercent}% ถึง ${targetPercent}% คือ ${hours} ชั่วโมง ${minutes} นาที`;
 }
 
-// ฟังก์ชันสำหรับรีเซ็ตฟอร์ม
-function resetForm() {
-    document.getElementById('charge-form').reset();
-    document.getElementById('battery-capacity').readOnly = false;
-    document.getElementById('time-result').textContent = '';
-}

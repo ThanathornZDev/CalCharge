@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    /* background-color: #6ca0a3; */
+    background: linear-gradient(90deg, rgba(113,107,223,1) 0%, rgba(138,138,198,1) 38%, rgba(106,155,211,1) 70%, rgba(3,101,121,1) 100%);
     margin: 0;
     padding: 0;
 }
@@ -9,7 +10,7 @@ body {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background: #fff;
+    background: #b9b9b9;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -30,13 +31,14 @@ label {
 input[type="number"] {
     padding: 10px;
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 20px;
+    border-radius: 5px;
 }
 
 button {
     padding: 10px;
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 20px;
     background-color: #4CAF50;
     color: #fff;
     border: none;
@@ -49,5 +51,30 @@ button:hover {
 }
 
 #result {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    /* background-color: rgb(85, 255, 63); */
+    /* margin: auto; */
+    border-radius: 5px;
+    /* width: auto; */
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    /* border: 3px solid green; */
+    /* padding: 10px; */
+}
+
+#car-model {
+    height: 30px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(95, 95, 95);
+    color: white;
+    text-align: center;
 }

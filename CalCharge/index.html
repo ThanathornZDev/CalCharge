@@ -8,10 +8,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>คำนวณเวลาในการชาร์จรถไฟฟ้า</h1>
+        <h1>คำนวณเวลาในการชาร์จรถไฟฟ้า V.2</h1>
         <form id="charge-form">
+            <label for="car-model">เลือกรุ่นรถไฟฟ้า:</label>
+            <select id="car-model" onchange="updateBatteryCapacity()">
+                <option value="">-- ระบุความจุแบต --</option>
+                <option value="BYD Dophin Standard">BYD Dophin Standard</option>
+                <option value="BYD Dophin Extended">BYD Dophin Extended</option>
+                <option value="BYD Atto 3 Dynamic">BYD Atto 3 Dynamic</option>
+                <option value="BYD Atto 3 Extended">BYD Atto 3 Extended</option>
+                <option value="BYD Seal Dynamic">BYD Seal Dynamic</option>
+                <option value="BYD Seal Premium">BYD Seal Premium</option>
+                <option value="BYD Seal Performance">BYD Seal Performance</option>
+            </select>
+            
             <label for="battery-capacity">ความจุแบตเตอรี่ (kWh):</label>
-            <input type="number" id="battery-capacity" step="0.01" required>
+            <input type="number" id="battery-capacity" step="0.01" required readonly>
             
             <label for="charging-power">กำลังในการชาร์จ (kW):</label>
             <input type="number" id="charging-power" step="0.01" required>
@@ -23,13 +35,17 @@
             <input type="number" id="target-percent" step="0.01" min="0" max="100" required>
             
             <button type="button" onclick="calculateChargeTime()">คำนวณ</button>
+            <!-- <button type="button" onclick="resetForm()">รีเซ็ต</button> -->
         </form>
         
         <div id="result">
             <p id="time-result"></p>
         </div>
     </div>
-    
+
+    <div class="footer">
+        <p>Website Powerd By THZ Developer <br> Tip me KBank : 123-1-66738-1</p>
+    </div>
     
     <script src="script.js"></script>
 </body>

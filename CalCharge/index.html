@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>คำนวณเวลาในการชาร์จรถไฟฟ้า</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="popup">
+        <div class="popup-content">
+            <div class="popup-accept">เวลาการชาร์จของคุณ</div>
+          <div class="popup-text">เวลาคือ 1h 2m</div>
+          <div class="popup-buttons">
+            <button id="popup-yes" class="popup-yes">ตกลง</button>
+            <!-- <button id="popup-no" class="popup-no">No</button> -->
+          </div>
+        </div>
+      </div>  
+
     <div class="container">
-        <h1>คำนวณเวลาในการชาร์จรถไฟฟ้า V.2</h1>
+        <h1>Cal Charge Time</h1>
         <form id="charge-form">
             <label for="car-model">เลือกรุ่นรถไฟฟ้า:</label>
             <select id="car-model" onchange="updateBatteryCapacity()">
@@ -40,6 +52,7 @@
         
         <div id="result">
             <p id="time-result"></p>
+            <p id="time-result-tou"></p>
         </div>
     </div>
 

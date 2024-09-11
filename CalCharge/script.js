@@ -1,4 +1,3 @@
-// ข้อมูลความจุแบตเตอรี่ของแต่ละรุ่น
 const carModels = {
     'BYD Dophin Standard': 44.90,
     'BYD Dophin Extended': 60.48,
@@ -9,7 +8,6 @@ const carModels = {
     'BYD Seal Performance': 82.56
 };
 
-// ฟังก์ชันสำหรับอัปเดตความจุแบตเตอรี่ตามรุ่นที่เลือก
 function updateBatteryCapacity() {
     const model = document.getElementById('car-model').value;
     const capacityInput = document.getElementById('battery-capacity');
@@ -47,5 +45,22 @@ function calculateChargeTime() {
 
     const resultElement = document.getElementById('time-result');
     resultElement.textContent = `เวลาในการชาร์จจาก ${currentPercent}% ถึง ${targetPercent}% คือ ${hours} ชั่วโมง ${minutes} นาที`;
+
+
+    const resultElementTou = document.getElementById('time-result-tou');
+    const startTime = '22:00';
+    
+    // คำนวณ endTime โดยตรวจสอบว่าจำนวนชั่วโมงเกิน 24 หรือไม่
+    let calculatedHours = (hours + 22) % 24;
+    const endTime = `${calculatedHours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    
+    resultElementTou.textContent = `สำหรับ TOU METER ใช้เวลาเริ่มต้น ${startTime} - ${endTime}`;
+    $('.popup-text').html(`สำหรับ TOU METER ใช้เวลาเริ่มต้น ${startTime} - ${endTime}`);
+    $('.popup').fadeIn();
+    
 }
+
+$('#popup-yes').click(function () {
+    $('.popup').fadeOut();
+});
 

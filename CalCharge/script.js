@@ -60,7 +60,9 @@ function calculateChargeTime() {
     
 }
 
-$('#popup-yes').click(function () {
-    $('.popup').fadeOut();
+$(document).ready(function () {
+    $('#popup-yes').click(function () {
+        $('.popup').fadeOut();
+    });
 });
 
